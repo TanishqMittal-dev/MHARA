@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | MHARA Real Estate</title>
+  <meta name="description" content="Connect with MHARA Developers. Have questions about our projects or want to schedule a visit? Get in touch with our team today.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">MHARA</a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-nav-schedule open-visit-modal">Schedule a Visit</button>
+        <a href="login.html" class="btn-nav-login">Login</a>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="contact-hero-section">
+    <div class="container">
+      <p class="contact-hero-overline">CONNECT WITH US</p>
+      <h1 class="contact-hero-title">GET IN TOUCH</h1>
+      <p class="contact-hero-subtitle">Have a question about our projects or want to schedule a visit?</p>
+    </div>
+  </section>
+
+  <!-- ================= SPLIT CONTACT & ENQUIRY FORM ================= -->
+  <section class="contact-split-section">
+    <div class="container">
+      <div class="contact-split-grid">
+
+        <!-- Left: Contact Information Card -->
+        <div class="contact-info-card">
+          <h2 class="contact-card-title">CONTACT INFORMATION</h2>
+
+          <div class="contact-info-list">
+            <!-- Phone -->
+            <div class="contact-info-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <p class="contact-item-val">+91 9896052010</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-val">bhavuk.verma.25cse@bmu.edu.in</p>
+              </div>
+            </div>
+
+            <!-- Corporate Office -->
+            <div class="contact-info-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Corporate Office</p>
+                <p class="contact-item-val">
+                  MHARA Developers, Main Office<br>
+                  Hissar, Haryana, India
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Need a Site Visit Subbox -->
+          <div class="site-visit-subbox">
+            <h4>NEED A SITE VISIT?</h4>
+            <p>Our team is always ready to assist you. Book a personalized tour with our property advisors.</p>
+            <button type="button" class="btn-primary open-visit-modal" style="width: 100%; font-size: 0.88rem; padding: 0.75rem;">
+              SCHEDULE A VISIT &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Send an Enquiry Card -->
+        <div class="contact-form-card">
+          <h2 class="contact-card-title">SEND AN ENQUIRY</h2>
+
+          <!-- Alert Notification Box -->
+          <div id="contactAlert" class="alert-box" role="alert"></div>
+
+          <form id="contactForm" novalidate>
+            <!-- Name & Phone Row -->
+            <div class="form-row-two-col">
+              <div class="form-group">
+                <label class="form-label" for="enquiryName">FULL NAME *</label>
+                <input type="text" id="enquiryName" name="name" required placeholder="Enter your name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="enquiryPhone">PHONE NUMBER *</label>
+                <input type="tel" id="enquiryPhone" name="phone" required placeholder="Enter your phone number">
+              </div>
+            </div>
+
+            <!-- Email & Interested Project Row -->
+            <div class="form-row-two-col">
+              <div class="form-group">
+                <label class="form-label" for="enquiryEmail">EMAIL ADDRESS *</label>
+                <input type="email" id="enquiryEmail" name="email" required placeholder="Enter your email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="enquiryProject">INTERESTED PROJECT</label>
+                <select id="enquiryProject" name="project" required>
+                  <option value="" disabled selected>Select a project</option>
+                  <option value="Green Valley">Green Valley — Gurugram / Jaipur</option>
+                  <option value="ABC Heights">ABC Heights — Jaipur</option>
+                  <option value="Palm Villas">Palm Villas — Dudu</option>
+                  <option value="Business Park">Business Park — Jaipur</option>
+                  <option value="ABC Resort">ABC Resort — Jaipur</option>
+                  <option value="Sunrise Plots">Sunrise Plots — Dudu</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message Area -->
+            <div class="form-group">
+              <label class="form-label" for="enquiryMessage">MESSAGE</label>
+              <textarea id="enquiryMessage" name="message" rows="4" placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-form-submit" style="margin-top: 1rem;">
+              <span>SUBMIT ENQUIRY</span>
+              <span>&rarr;</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFFICE HOURS SECTION ================= -->
+  <section class="office-hours-section">
+    <div class="container">
+      <div class="office-hours-card">
+        <h3 class="office-hours-title">OFFICE HOURS</h3>
+
+        <div class="office-hours-row">
+          <span class="office-hours-day">Monday &ndash; Friday</span>
+          <span class="office-hours-time">9:00 AM &ndash; 6:00 PM</span>
+        </div>
+
+        <div class="office-hours-row">
+          <span class="office-hours-day">Saturday</span>
+          <span class="office-hours-time">10:00 AM &ndash; 4:00 PM</span>
+        </div>
+
+        <div class="office-hours-row" style="border-bottom: none;">
+          <span class="office-hours-day">Sunday</span>
+          <span class="office-hours-time closed">Closed</span>
+        </div>
+
+        <p class="office-hours-note">
+          Appointments outside of normal hours can be scheduled with advance notice through our enquiry form.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUICK CONTACT 3 CARDS ================= -->
+  <section class="quick-connect-section">
+    <div class="container">
+      <h3 class="quick-connect-title">CONNECT WITH US</h3>
+
+      <div class="quick-connect-grid">
+        <!-- Call Us -->
+        <div class="quick-contact-box">
+          <div class="quick-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <p class="quick-contact-label">CALL US</p>
+          <p class="quick-contact-detail">+91 9896052010</p>
+        </div>
+
+        <!-- Write to Us -->
+        <div class="quick-contact-box">
+          <div class="quick-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </div>
+          <p class="quick-contact-label">WRITE TO US</p>
+          <p class="quick-contact-detail">bhavuk.verma.25cse@bmu.edu.in</p>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="quick-contact-box">
+          <div class="quick-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <p class="quick-contact-label">VISIT US</p>
+          <p class="quick-contact-detail">MHARA Developers, Main Office<br>Hissar, Haryana, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BOTTOM CTA BANNER ================= -->
+  <div class="container">
+    <div class="bottom-cta-banner">
+      <h3 class="bottom-cta-title">LET&rsquo;S FIND YOUR NEXT SPACE</h3>
+      <p class="bottom-cta-subtitle">Have a project in mind? Talk to our team.</p>
+      <a href="projects.html" class="btn-primary">EXPLORE PROJECTS &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">MHARA</a>
+
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          <li><a href="login.html" class="footer-link">Login</a></li>
+          <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="#" class="social-circle-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-bottom">&copy; 2026 ABC Developers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCHEDULE A VISIT MODAL ================= -->
+  <div id="visitModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
+    <div class="modal-box">
+      <button type="button" id="closeVisitModal" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="visitModalTitle" class="modal-title">Schedule a Visit</h3>
+      <p class="modal-subtitle">Experience our properties in person with our development advisors.</p>
+
+      <div id="visitAlert" class="alert-box"></div>
+
+      <form id="visitForm">
+        <div class="form-group">
+          <label class="form-label" for="visitName">Your Full Name</label>
+          <input type="text" id="visitName" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitPhone">Phone Number</label>
+          <input type="tel" id="visitPhone" required placeholder="Enter 10-digit mobile number">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitProject">Select Development</label>
+          <select id="visitProject" required>
+            <option value="Green Valley - Gurugram">Green Valley — Gurugram / Jaipur</option>
+            <option value="ABC Heights - Jaipur">ABC Heights — Jaipur</option>
+            <option value="Palm Villas - Dudu">Palm Villas — Dudu</option>
+            <option value="Business Park - Jaipur">Business Park — Jaipur</option>
+            <option value="ABC Resort - Jaipur">ABC Resort — Jaipur</option>
+            <option value="Sunrise Plots - Dudu">Sunrise Plots — Dudu</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitDate">Preferred Date</label>
+          <input type="date" id="visitDate" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:0.5rem;">Confirm Visit Schedule &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
