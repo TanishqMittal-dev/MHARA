@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | MHARA Real Estate</title>
+  <meta name="description" content="Access your MHARA dashboard, saved developments, and schedule private viewings.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">MHARA</a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="nav-link active" style="font-weight:700;">Login</a>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN LOGIN CONTAINER ================= -->
+  <main class="login-page-main">
+    <div class="login-card-container">
+
+      <!-- Left Visual Panel -->
+      <div class="login-visual-panel">
+        <img src="images/auth-bg.jpg" alt="Luxury Mediterranean Villa at Sunset" class="login-bg-img">
+        <div class="login-overlay"></div>
+
+        <div class="login-visual-top">
+          <span class="login-brand-tag">MHARA</span>
+          <h1 class="login-welcome-title">Welcome Back!</h1>
+          <p class="login-welcome-subtitle">
+            Continue your journey towards finding your ideal space.
+          </p>
+        </div>
+
+        <div class="login-visual-bottom">
+          <div class="login-features-list">
+            <span>&bull; Premium Properties</span>
+            <span>&bull; Sustainable Living</span>
+            <span>&bull; Prime Locations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form Panel -->
+      <div class="login-form-panel">
+        <div class="login-form-header">
+          <h2 class="login-form-title">Login to Your Account</h2>
+          <p class="login-form-subtitle">Access your dashboard, saved projects and more.</p>
+        </div>
+
+        <!-- Alert Notification Box -->
+        <div id="loginAlert" class="alert-box" role="alert"></div>
+
+        <form id="loginForm" novalidate>
+          <!-- Email Field -->
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email Address</label>
+            <div class="input-with-icon">
+              <input type="email" id="loginEmail" name="email" required placeholder="Enter your email address" autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Password Field with Show/Hide Toggle -->
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div class="input-with-icon">
+              <input type="password" id="loginPassword" name="password" required placeholder="Enter your password" autocomplete="current-password">
+              <button type="button" class="input-icon-btn toggle-password-btn" data-target="loginPassword" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Options Row -->
+          <div class="form-options-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe">
+              <span>Remember Me</span>
+            </label>
+            <a href="javascript:void(0)" onclick="alert('Password reset link simulated: Please check your inbox.')" class="forgot-link">Forgot Password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-form-submit">
+            <span>Login</span>
+            <span>&rarr;</span>
+          </button>
+
+          <!-- Navigation Links -->
+          <div class="form-footer-nav">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <a href="index.html" class="back-home-link">&larr; Back to Home</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">MHARA</a>
+
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          <li><a href="login.html" class="footer-link">Login</a></li>
+          <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="#" class="social-circle-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-bottom">&copy; 2026 MHARA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
