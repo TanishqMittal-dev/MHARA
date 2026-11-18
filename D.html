@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | MHARA Real Estate</title>
+  <meta name="description" content="Explore residential, commercial, township and resort developments by MHARA.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">MHARA</a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn-nav-schedule open-visit-modal">Schedule a Visit</button>
+        <a href="login.html" class="btn-nav-login">Login</a>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ================= PROJECTS HERO BANNER ================= -->
+  <section class="projects-hero-banner">
+    <div class="container projects-hero-grid">
+      <div class="projects-hero-text">
+        <h1 class="projects-hero-title">
+          Spaces for<br>
+          a Better Tomorrow
+        </h1>
+        <p class="projects-hero-desc">
+          Explore our residential, commercial and upcoming developments designed for modern living.
+        </p>
+      </div>
+
+      <div class="projects-hero-image-wrap">
+        <img src="images/projects-hero.jpg" alt="Modern architectural facade">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEARCH & CATEGORY FILTERS ================= -->
+  <section class="projects-controls">
+    <div class="container">
+      <!-- Search Input Bar -->
+      <div class="search-bar-wrap">
+        <div class="search-input-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="projectSearchInput" placeholder="Search projects . . ." aria-label="Search projects by name or location">
+        </div>
+      </div>
+
+      <!-- Filter Category Pills -->
+      <div class="filter-pills-row">
+        <button type="button" class="filter-pill active" data-filter="all">All</button>
+        <button type="button" class="filter-pill" data-filter="apartments">Apartments</button>
+        <button type="button" class="filter-pill" data-filter="townships">Townships</button>
+        <button type="button" class="filter-pill" data-filter="villas">Villas</button>
+        <button type="button" class="filter-pill" data-filter="commercial">Commercial</button>
+        <button type="button" class="filter-pill" data-filter="resorts">Resorts</button>
+        <button type="button" class="filter-pill" data-filter="upcoming">Upcoming</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS 3-COLUMN GRID ================= -->
+  <section class="projects-grid-section">
+    <div class="container">
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Card 1: Green Valley -->
+        <article class="project-card" data-category="townships villas upcoming">
+          <div class="card-thumb">
+            <img src="images/project-green-valley.jpg" alt="Green Valley Development" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Green Valley</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jaipur</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: ABC Heights -->
+        <article class="project-card" data-category="apartments">
+          <div class="card-thumb">
+            <img src="images/project-abc-heights.jpg" alt="ABC Heights High-rise Towers" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">ABC Heights</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jaipur</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: Palm Villas -->
+        <article class="project-card" data-category="villas apartments">
+          <div class="card-thumb">
+            <img src="images/project-palm-villas.jpg" alt="Palm Villas Gated Community" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Palm Villas</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Dudu</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Business Park -->
+        <article class="project-card" data-category="commercial">
+          <div class="card-thumb">
+            <img src="images/project-business-park.jpg" alt="Business Park Commercial Hub" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Business Park</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jaipur</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 5: ABC Resort -->
+        <article class="project-card" data-category="resorts apartments">
+          <div class="card-thumb">
+            <img src="images/project-abc-resort.jpg" alt="ABC Resort Residential Complex" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">ABC Resort</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Jaipur</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 6: Sunrise Plots -->
+        <article class="project-card" data-category="upcoming townships">
+          <div class="card-thumb">
+            <img src="images/project-sunrise-plots.jpg" alt="Sunrise Plots Development" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Sunrise Plots</h3>
+            <div class="card-location">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Dudu</span>
+            </div>
+            <a href="project-details.html" class="card-btn">
+              View Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Empty State Container -->
+        <div id="noProjectsFound" class="no-results-msg" style="display:none;">
+          <p><strong>No developments found matching your criteria.</strong></p>
+          <p style="margin-top:0.4rem; font-size:0.95rem;">Try adjusting your keyword search or select a different category pill above.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">MHARA</a>
+
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          <li><a href="login.html" class="footer-link">Login</a></li>
+          <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="#" class="social-circle-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-bottom">&copy; 2026 ABC Developers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCHEDULE A VISIT MODAL ================= -->
+  <div id="visitModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle">
+    <div class="modal-box">
+      <button type="button" id="closeVisitModal" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 id="visitModalTitle" class="modal-title">Schedule a Visit</h3>
+      <p class="modal-subtitle">Experience our properties in person with our development advisors.</p>
+
+      <div id="visitAlert" class="alert-box"></div>
+
+      <form id="visitForm">
+        <div class="form-group">
+          <label class="form-label" for="visitName">Your Full Name</label>
+          <input type="text" id="visitName" required placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitPhone">Phone Number</label>
+          <input type="tel" id="visitPhone" required placeholder="Enter 10-digit mobile number">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitProject">Select Development</label>
+          <select id="visitProject" required>
+            <option value="Green Valley - Gurugram">Green Valley — Gurugram / Jaipur</option>
+            <option value="ABC Heights - Jaipur">ABC Heights — Jaipur</option>
+            <option value="Palm Villas - Dudu">Palm Villas — Dudu</option>
+            <option value="Business Park - Jaipur">Business Park — Jaipur</option>
+            <option value="ABC Resort - Jaipur">ABC Resort — Jaipur</option>
+            <option value="Sunrise Plots - Dudu">Sunrise Plots — Dudu</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="visitDate">Preferred Date</label>
+          <input type="date" id="visitDate" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:0.5rem;">Confirm Visit Schedule &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
