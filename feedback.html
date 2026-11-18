@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | MHARA Real Estate</title>
+  <meta name="description" content="Share your experience with MHARA Real Estate and our project team.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">MHARA</a>
+      <nav aria-label="Main navigation"><ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li><a href="feedback.html" class="nav-link active" aria-current="page">Feedback</a></li>
+      </ul></nav>
+      <div class="nav-actions"><button type="button" class="btn-nav-schedule open-visit-modal">Schedule a Visit</button><a href="login.html" class="btn-nav-login">Login</a></div>
+      <button type="button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main class="feedback-page">
+    <section class="feedback-hero"><div class="container"><p class="section-overline">YOUR EXPERIENCE MATTERS</p><h1>Share your feedback</h1><p>Tell us how we can make your experience with MHARA better.</p></div></section>
+    <section class="feedback-section"><div class="container"><div class="feedback-card">
+      <h2>We’re listening</h2><p class="feedback-intro">Your feedback is stored securely and reviewed by our team.</p>
+      <div id="feedbackAlert" class="alert-box" role="status" aria-live="polite"></div>
+      <form id="feedbackForm" novalidate>
+        <div class="form-row-two-col">
+          <div class="form-group"><label class="form-label" for="feedbackName">FULL NAME *</label><input id="feedbackName" name="name" type="text" required minlength="2" maxlength="100" autocomplete="name"></div>
+          <div class="form-group"><label class="form-label" for="feedbackEmail">EMAIL ADDRESS *</label><input id="feedbackEmail" name="email" type="email" required maxlength="254" autocomplete="email"></div>
+        </div>
+        <div class="form-row-two-col">
+          <div class="form-group"><label class="form-label" for="feedbackRating">YOUR RATING *</label><select id="feedbackRating" name="rating" required><option value="5" selected>5 — Excellent</option><option value="4">4 — Very good</option><option value="3">3 — Good</option><option value="2">2 — Needs improvement</option><option value="1">1 — Poor</option></select><small id="ratingValue" class="feedback-hint">5 / 5</small></div>
+          <div class="form-group"><label class="form-label" for="feedbackProject">PROJECT (OPTIONAL)</label><select id="feedbackProject" name="project"><option value="">General feedback (no project)</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label" for="feedbackMessage">YOUR FEEDBACK *</label><textarea id="feedbackMessage" name="message" rows="6" required minlength="10" maxlength="2000" placeholder="Share your experience (10–2000 characters)"></textarea></div>
+        <button type="submit" class="btn-primary feedback-submit">Submit feedback</button>
+      </form>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><a href="index.html" class="footer-logo">MHARA</a><ul class="footer-links">
+    <li><a href="index.html" class="footer-link">Home</a></li><li><a href="projects.html" class="footer-link">Projects</a></li><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li><li><a href="feedback.html" class="footer-link">Feedback</a></li><li><a href="login.html" class="footer-link">Login</a></li><li><a href="signup.html" class="footer-link">Sign Up</a></li>
+  </ul></div><div class="footer-divider"></div><p class="footer-bottom">&copy; 2026 MHARA Developers. All rights reserved.</p></div></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
