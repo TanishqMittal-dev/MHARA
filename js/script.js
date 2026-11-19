@@ -433,7 +433,10 @@ function initVisitModal() {
 
       const name = document.getElementById('visitName')?.value.trim();
       const phone = document.getElementById('visitPhone')?.value.trim();
-      const project = document.getElementById('visitProject')?.value;
+      const projectSelect = document.getElementById('visitProject');
+      const selectedOption = projectSelect?.selectedOptions[0];
+      const project = selectedOption?.dataset.projectName || '';
+      const projectId = projectSelect?.value || '';
       const visitDate = document.getElementById('visitDate')?.value;
       const submitBtn = visitForm.querySelector('button[type="submit"]');
 
@@ -453,7 +456,7 @@ function initVisitModal() {
         const response = await fetch('/api/visits', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, phone, project, projectId: visitForm.querySelector('#visitProject')?.selectedOptions[0]?.dataset.projectId, visitDate })
+          body: JSON.stringify({ name, phone, project, projectId, visitDate })
         });
 
         const data = await response.json();
@@ -584,20 +587,42 @@ function initProjectCatalog() {
 function loadProjectsIntoForms() {
   const selectors = [document.getElementById('enquiryProject'), document.getElementById('visitProject'), document.getElementById('feedbackProject')].filter(Boolean);
   if (!selectors.length) return;
+  selectors.forEach(select => {
+    const placeholder = select.id === 'feedbackProject' ? 'General feedback (no project)' : select.id === 'visitProject' ? 'Loading developments…' : 'Loading projects…';
+    select.replaceChildren(new Option(placeholder, ''));
+    select.disabled = true;
+    if (select.id === 'visitProject') select.setAttribute('aria-busy', 'true');
+  });
   getProjects().then(projects => selectors.forEach(select => {
     const prior = select.value;
-    select.replaceChildren(new Option(select.id === 'feedbackProject' ? 'General feedback (no project)' : 'Select a project', ''));
+    const isVisit = select.id === 'visitProject';
+    const placeholder = select.id === 'feedbackProject' ? 'General feedback (no project)' : isVisit ? (projects.length ? 'Select a development' : 'No developments available') : (projects.length ? 'Select a project' : 'No projects available');
+    select.replaceChildren(new Option(placeholder, ''));
     projects.forEach(project => {
-      const option = new Option(`${project.title} — ${project.location}`, project.title);
+      const option = new Option(`${project.title} — ${project.location}`, project._id);
       option.dataset.projectId = project._id;
+      option.dataset.projectName = project.title;
       select.add(option);
-      if (new URLSearchParams(location.search).get('id') === project._id) select.value = project.title;
     });
-    if (prior) select.value = prior;
     const requestedId = new URLSearchParams(location.search).get('id');
-    const requestedOption = Array.from(select.options).find(option => option.dataset.projectId === requestedId);
-    if (requestedOption) select.value = requestedOption.value;
-  })).catch(error => console.error('Project options could not be loaded:', error));
+    if (requestedId && projects.some(project => project._id === requestedId)) select.value = requestedId;
+    else if (prior && projects.some(project => project._id === prior)) select.value = prior;
+    select.disabled = projects.length === 0;
+    if (isVisit) select.removeAttribute('aria-busy');
+    const alert = isVisit ? document.getElementById('visitAlert') : null;
+    if (isVisit && !projects.length) showAlert(alert, 'No developments are currently available to schedule a visit.', 'error');
+  })).catch(error => {
+    selectors.forEach(select => {
+      const isVisit = select.id === 'visitProject';
+      select.replaceChildren(new Option(isVisit ? 'Developments could not be loaded' : 'Projects could not be loaded', ''));
+      select.disabled = true;
+      if (isVisit) {
+        select.removeAttribute('aria-busy');
+        showAlert(document.getElementById('visitAlert'), `Unable to load developments. ${error.message}`, 'error');
+      }
+    });
+    console.error('Project options could not be loaded:', error);
+  });
   const dateInput = document.getElementById('visitDate');
   if (dateInput) dateInput.min = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
 }
@@ -636,7 +661,8 @@ function initProjectDetailPage() {
     const heading = document.querySelector('.overview-grid .detail-section-title'); if (heading) heading.textContent = `${project.title} Overview`;
     const overview = document.querySelector('.overview-text'); if (overview && project.description) overview.textContent = project.description;
     const cta = document.querySelector('.detail-cta-title'); if (cta) cta.textContent = `Ready to explore ${project.title}?`;
-    document.querySelectorAll('#visitProject option').forEach(option => { if (option.value === project.title) option.selected = true; });
+    const visitProject = document.getElementById('visitProject');
+    if (visitProject && Array.from(visitProject.options).some(option => option.value === project._id)) visitProject.value = project._id;
   }).catch(error => {
     const main = document.querySelector('.details-page-wrap .container');
     if (main) { const note = document.createElement('p'); note.className = 'alert-box show error'; note.setAttribute('role', 'alert'); note.textContent = error.message; main.prepend(note); }
